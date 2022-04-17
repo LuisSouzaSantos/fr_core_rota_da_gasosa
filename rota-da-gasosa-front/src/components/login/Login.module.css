@@ -1,0 +1,21 @@
+body{
+    background: linear-gradient(180deg, #1C5C9C , #DEE2E6 87%);
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.logo-container{
+    display: flex;
+	justify-content: center;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+.button-login{
+    background: linear-gradient(270deg, #4936BD , #1C5C9C );
+}
