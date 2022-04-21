@@ -14,11 +14,11 @@ class Login extends React.Component {
                     </div>
                     <div >
                         <form>
-                            <input placeholder="Digite seu CPF/CNPJ..." type="text" />
-                            <input placeholder="Digite sua senha..." type="text" />
+                            <input placeholder="Digite seu CPF/CNPJ..." type="text" required/>
+                            <input placeholder="Digite sua senha..." type="password" required/>
                         </form>
                     </div>
-                    <p className={loginStyles.recoveryPasswordText}><a>Esqueci minha senha</a></p>
+                    <p className={loginStyles.recoveryPasswordText}><a href="">Esqueci minha senha</a></p>
                     <div >
                         <button className={loginStyles.buttonLogin}>LOGIN</button>
                     </div>

@@ -27,7 +27,7 @@
 a:link, a:visited, a:hover, a:active {
     text-decoration: none;
     color: #1C5C9C;
-  }
+}
   
 .registerAccount{
     margin-top: 55px;
@@ -43,11 +43,8 @@ form input{
     margin: 25px auto 25px auto;
     width: 364px;
     height: 50px;
+    text-align: center;
 }
-
-::placeholder {
-    padding-left: 25px;
-  }
 
 .logo{
     height: 107.9px;
@@ -58,6 +55,7 @@ form input{
     margin-top: 30px;
     margin-bottom: 30px;
     color: #1C5C9C;
+    cursor: pointer;
 }
 
 .buttonLogin{
@@ -65,5 +63,10 @@ form input{
     width: 364px;
     border-radius: 6.30112px;
     height: 38.01px;
+    cursor: pointer;
+    opacity: 0.6;
 }
-
+.buttonLogin:hover, .buttonLogin:active{
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+    opacity: 1.0;
+}
