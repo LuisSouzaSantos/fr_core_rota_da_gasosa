@@ -1,6 +1,6 @@
 import React from "react";
 import loginStyles from './Login.module.css';
-import logo from '../../assets/images/rota-icone.png'; 
+import logo from '../../assets/images/rota-icone1.png'; 
 
 class Login extends React.Component {
     
