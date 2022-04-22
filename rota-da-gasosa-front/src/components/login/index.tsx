@@ -1,6 +1,8 @@
 import React from "react";
 import loginStyles from './Login.module.css';
 import logo from '../../assets/images/rota-icone1.png'; 
+import { Link } from "react-router-dom";
+
 
 class Login extends React.Component {
     
@@ -18,11 +20,11 @@ class Login extends React.Component {
                             <input placeholder="Digite sua senha..." type="password" required/>
                         </form>
                     </div>
-                    <p className={loginStyles.recoveryPasswordText}><a href="">Esqueci minha senha</a></p>
+                    <p className={loginStyles.recoveryPasswordText}><a>Esqueci minha senha</a></p>
                     <div >
                         <button className={loginStyles.buttonLogin}>LOGIN</button>
                     </div>
-                    <p className={loginStyles.registerAccount} >Não tem conta? <a href=" ">Cadastre-se</a></p>    
+                    <p className={loginStyles.registerAccount} >Não tem conta? <Link to={"/registerAccount"}>Cadastre-se</Link></p>    
                 </div>    
             </div>
         )
