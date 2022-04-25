@@ -10,8 +10,8 @@ class RegisterAccount extends React.Component {
         return (
             <div className={registerStyles.registerContainer}>
                 <div className={registerStyles.formContainer}>
-                    <div>
-                        <button className={registerStyles.buttonReturn}><Link to={"/"}>Voltar</Link></button>
+                    <div className={registerStyles.buttonReturn}>
+                        <button><Link to={"/"}>Voltar</Link></button>
                     </div>
                     <div className={registerStyles.register}>Cadastro</div>
                     <div className={registerStyles.registerForm}>
@@ -24,13 +24,15 @@ class RegisterAccount extends React.Component {
 
 
                             <input placeholder="Digite o nome completo" type="text" required/>
-                            <input placeholder="Digite sua senha..." type="text" required/>
-                            <input placeholder="Digite sua senha..." type="text" required/>
-                            <input placeholder="Digite sua senha..." type="text" required/>
+                            <input placeholder="E-mail" type="email" required/>
+                            <input placeholder="Digite o CEP" type="text" required/>
+                            <input placeholder="Endereço" type="text" required/>
+                            <input placeholder="Número" type="text" required/>
+                            <input placeholder="Telefone" type="text"/>
                             <input placeholder="Digite sua senha..." type="password" required/>
                         </form>
                     </div>
-                    <div>
+                    <div className={registerStyles.buttonRegisterContainer}>
                         <button className={registerStyles.buttonRegister}><Link to={"/"}>Cadastrar</Link></button>
                     </div>
                 </div>    

@@ -22,7 +22,11 @@
     border-radius: 15px;
 }
 .buttonReturn{
+    margin-top: 50px;
     text-align: left;
+    padding-left: 30px;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 .register{
@@ -52,12 +56,12 @@ padding-bottom: 38px;
     background: #FFFFFF;
     border: 2px solid #1C5C9C;
     box-sizing: border-box;
-    border-radius: 5px;
+    border-radius: 30px;
 }
 
 
 .buttonRegister{
-    background: linear-gradient(270deg, #4936BD , #1C5C9C );
+    background: linear-gradient(270deg, #4936BD , #1C5C9C);
     width: 364px;
     border-radius: 6.30112px;
     height: 38.01px;
@@ -69,5 +73,12 @@ padding-bottom: 38px;
 .button.buttonRegister:hover, .button.buttonRegister:active{
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
     opacity: 1.0;
+}
+
+.buttonRegisterContainer{
+    background: linear-gradient(270deg, #4936BD , #1C5C9C);
+    width: 364px;
+    border-radius: 6.30112px;
+    height: 38.01px;
 }
 
