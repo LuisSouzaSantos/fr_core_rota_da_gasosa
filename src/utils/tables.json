@@ -1,0 +1,102 @@
+[
+    {
+        "name": "Bandeira",
+        "fields": 
+            [   
+                {
+                    "key": 1,
+                    "field": "Name"
+                },
+                {
+
+                    "key": 2,
+                    "field": "Visível"
+                },
+                {
+
+                    "key": 3,
+                    "field": "Ações"
+                }
+            ]
+    },
+    {
+        "name": "Combustível",
+        "fields": 
+            [   
+                {
+                    "key": 1,
+                    "field": "Name"
+                },
+                {
+
+                    "key": 2,
+                    "field": "Visível"
+                },
+                {
+
+                    "key": 3,
+                    "field": "Ações"
+                }
+            ]
+    },
+    {
+        "name": "Promoções",
+        "fields": 
+            [   
+                {
+                    "key": 1,
+                    "field": "Name"
+                },
+                {
+
+                    "key": 2,
+                    "field": "Visível"
+                },
+                {
+
+                    "key": 3,
+                    "field": "Ações"
+                }
+            ]
+    },
+    {
+        "name": "Serviçõs",
+        "fields": 
+            [   
+                {
+                    "key": 1,
+                    "field": "Name"
+                },
+                {
+
+                    "key": 2,
+                    "field": "Visível"
+                },
+                {
+
+                    "key": 3,
+                    "field": "Ações"
+                }
+            ]
+    },
+    {
+        "name": "Tipo de Tempo",
+        "fields": 
+            [   
+                {
+                    "key": 1,
+                    "field": "Name"
+                },
+                {
+
+                    "key": 2,
+                    "field": "Visível"
+                },
+                {
+
+                    "key": 3,
+                    "field": "Ações"
+                }
+            ]
+    }
+]
