@@ -4,12 +4,21 @@
 }
 
 .menuTitle{
-
     font-weight: 700;
     font-size: 20px;
     line-height: 30px;
     text-align: center;
     color: rgba(0, 0, 0, 0.73);
+    margin-right: 100%;
+}
+
+.navStart{
+    margin-left: 20px;
+}
+
+.container-nav{
+    margin-left: 0px;
+    padding-left: 0px;
 }
 
 .menuLogo{
@@ -19,13 +28,20 @@
 }
 
 .bellIcon{
-    margin-left: 50px;
+   margin-left: auto !important;
+   margin-right: 20px;
+
 }
 
 .circleUser{
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background-color: #1C5C9C;
     text-align: center;
+}
+
+.navEnd{
+    margin-left: auto;
+    margin-right: 20px;
 }
