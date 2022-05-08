@@ -1,6 +1,7 @@
 [
     {
         "name": "Bandeira",
+        "key": 1,
         "fields": 
             [   
                 {
@@ -21,6 +22,7 @@
     },
     {
         "name": "Combustível",
+        "key": 2,
         "fields": 
             [   
                 {
@@ -41,6 +43,7 @@
     },
     {
         "name": "Promoções",
+        "key": 3,
         "fields": 
             [   
                 {
@@ -60,7 +63,8 @@
             ]
     },
     {
-        "name": "Serviçõs",
+        "name": "Serviços",
+        "key": 4,
         "fields": 
             [   
                 {
@@ -81,6 +85,7 @@
     },
     {
         "name": "Tipo de Tempo",
+        "key": 5,
         "fields": 
             [   
                 {
