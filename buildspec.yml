@@ -4,9 +4,11 @@ phases:
   install:
     runtime-versions:
       nodejs: 12
-  pre_build:
     commands:
+      - npm install -g typescript
       - npm install
+  pre_build:
+      - echo Nothing to do in the pre_build phase...
   build:
     commands:
       - echo Build started on `date`
