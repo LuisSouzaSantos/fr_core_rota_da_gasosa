@@ -17,6 +17,10 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
+cache:
+  paths:
+    - 'node_modules/**/*'
 artifacts:
   files:
-    - build/
+    - '**/*'
+  name: fr-rota-da-gasosa-$(date +%Y-%m-%d)
