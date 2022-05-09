@@ -1,7 +1,8 @@
 import { LoginDTO } from "../model/LoginDTO";
+import { GLOBAL_URLS } from "./service";
 
-const GLOBAL_URL = "http://localhost:8080";
-const AUTH_URL = GLOBAL_URL + "/auth"
+
+const AUTH_URL = GLOBAL_URLS.SERVER + "/auth"
 
 export default class AuthService {
 
