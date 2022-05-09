@@ -3,9 +3,66 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import  './Main.css';
 import { BsPlusCircle } from "react-icons/bs";
 import tables from '../../utils/tables.json'
+import { FlagDTO } from "../../model/FlagDTO";
+import { FuelDTO } from "../../model/FuelDTO";
+import { AvailableTimeDTO } from "../../model/AvailableTimeDTO";
+import { PromotionDTO } from "../../model/PromotionDTO";
+import { ServiceDTO } from "../../model/Service";
+import FlagService from "../../services/flag-service";
 
-class Main extends React.Component<{}, {username: string, password: string}> {
+interface State {
+    flagList?: Array<FlagDTO>,
+    fuelList?: Array<FuelDTO>,
+    availableTimeList?: Array<AvailableTimeDTO>,
+    promotionList?: Array<PromotionDTO>,
+    serviceList?: Array<ServiceDTO>
+}
+
+class Main extends React.Component<State> {
     
+    constructor(props: any) {
+        super(props);
+
+        this.state = {
+            flagList: [],
+            fuelList: [],
+            availableTimeList: [],
+            promotionList: [],
+            serviceList: []
+        }
+
+        this.getAllFlags = this.getAllFlags.bind(this);
+        this.getAllFuels = this.getAllFuels.bind(this);
+        this.getAllAvailableTimes = this.getAllAvailableTimes.bind(this);
+        this.getAllPromotion = this.getAllPromotion.bind(this);
+        this.getAllServices = this.getAllServices.bind(this);
+
+        this.getAllFlags();
+    }
+
+    getAllFlags = () => {
+        FlagService.getAll().then((result) => {
+            this.setState({flagList: result});
+        }, (error) => {
+            console.log(error);
+        })
+    }
+
+    getAllFuels = () => {
+
+    }
+
+    getAllAvailableTimes = () => {
+
+    }
+
+    getAllPromotion = () => {
+
+    }
+
+    getAllServices = () => {
+
+    }
     
     render() {
         return (

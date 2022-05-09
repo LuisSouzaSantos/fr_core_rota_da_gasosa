@@ -6,7 +6,6 @@ import { LoginDTO } from "../../model/LoginDTO";
 import AuthService from "../../services/auth-service";
 import { CredentialsType } from "../../model/CredentailsType";
 
-
 class Login extends React.Component<{}, {username: string, password: string}> {
 
     constructor(props: any) {
@@ -25,8 +24,9 @@ class Login extends React.Component<{}, {username: string, password: string}> {
     handleAuthentication = (event: any) => {
         let login = new LoginDTO(this.state.username, this.state.password, CredentialsType.ADMINISTRATOR, "");
 
-        AuthService.authetication(login).then((result) => {
-            console.log(result);
+        AuthService.authetication(login).then((result: any) => {
+            localStorage.setItem('key', 'Bearer '+result.token)
+            window.location.href = "/admin/menu";
         }, (error) => {
             console.log(error);
         })
