@@ -3,8 +3,8 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 
 function Form({isOpen, id, name, visible, onSave, onEdit, onClose}: any) {
-    
-    const [formName, setFormName] = React.useState<string>('');
+  
+    const [formName, setFormName] = React.useState<string>(name);
     const [formVisible, setFormVisible] = React.useState<boolean>(visible);
 
     const handleName = (event: any) => {
@@ -82,7 +82,7 @@ function Form({isOpen, id, name, visible, onSave, onEdit, onClose}: any) {
               <div style={footerContainer}>
                 <button style={buttonClose} onClick={onClose}>Fechar</button>
 
-                <button style={buttonConfirm} onClick={(e) => id ? onEdit(e, formName, formVisible): onSave(e, formName, formVisible)}>{id ? 'Editar' : 'Salvar'}</button>
+                <button style={buttonConfirm} onClick={(e) => id ? onEdit(e, id, formName, formVisible): onSave(e, formName, formVisible)}>{id ? 'Editar' : 'Salvar'}</button>
               </div>
             </form>
           </Box>

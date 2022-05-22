@@ -9,6 +9,8 @@ import AvailableTimeService from "../../services/available-time-service";
 import PromotionService from "../../services/promotion-service";
 import ServiceService from "../../services/service-service";
 import Form from "../../components/form/Form";
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 class Main extends React.Component<any, any> {
@@ -23,6 +25,7 @@ class Main extends React.Component<any, any> {
             promotionList: [],
             serviceList: [],
             showForm: false,
+            idValue: 0,
             nameValue: '',
             visibleValue: false,
             formIndex: 0,
@@ -120,14 +123,120 @@ class Main extends React.Component<any, any> {
             console.log(error);
         })
     }
+
+    deleteFlag = (id: number) => {
+        FlagService.delete(id).then((result) => {
+            this.setState({flagList: this.removeItemFromArray(this.state.flagList, id)});
+        }, (error) => {
+            console.log(error);
+        })
+    }
+
+    deleteFuel = (id: number) => {
+        FuelService.delete(id).then((result) => {
+            this.setState({fuelList: this.removeItemFromArray(this.state.fuelList, id)});
+        }, (error) => {
+            console.log(error);
+        })
+    }
+
+    deletePromotion = (id: number) => {
+        PromotionService.delete(id).then((result) => {
+            this.setState({promotionList: this.removeItemFromArray(this.state.promotionList, id)});
+        }, (error) => {
+            console.log(error);
+        })
+    }
+
+    deleteService = (id: number) => {
+        ServiceService.delete(id).then((result) => {
+            this.setState({serviceList: this.removeItemFromArray(this.state.serviceList, id)});
+        }, (error) => {
+            console.log(error);
+        })
+    }
+
+    deleteAvailableTime = (id: number) => {
+        AvailableTimeService.delete(id).then((result) => {
+            this.setState({availableTimeList: this.removeItemFromArray(this.state.availableTimeList, id)});
+        }, (error) => {
+            console.log(error);
+        })
+    }
+
+    editFlag = (id: number, name: string, visible: boolean) => {
+        FlagService.edit(id, name, visible).then((result) => {
+            this.setState({flagList: this.removeItemFromArray(this.state.flagList, id)});
+            this.setState({flagList: [...this.state.flagList, result]});
+        }, (error) => {
+            console.log(error);
+        })
+    }
+
+    editFuel = (id: number, name: string, visible: boolean) => {
+        FuelService.edit(id, name, visible).then((result) => {
+            this.setState({fuelList: this.removeItemFromArray(this.state.fuelList, id)});
+            this.setState({fuelList: [...this.state.fuelList, result]});
+        }, (error) => {
+            console.log(error);
+        })
+    }
+
+    editPromotion = (id: number,name: string, visible: boolean) => {
+        PromotionService.edit(id, name, visible).then((result) => {
+            this.setState({promotionList: this.removeItemFromArray(this.state.promotionList, id)});
+            this.setState({promotionList: [...this.state.promotionList, result]});
+        }, (error) => {
+            console.log(error);
+        })
+    }
+
+    editService = (id: number, name: string, visible: boolean) => {
+        ServiceService.edit(id, name, visible).then((result) => {
+            this.setState({serviceList: this.removeItemFromArray(this.state.serviceList, id)});
+            this.setState({serviceList: [...this.state.serviceList, result]});
+        }, (error) => {
+            console.log(error);
+        })
+    }
+
+    editAvailableTime = (id: number, name: string, visible: boolean) => {
+        AvailableTimeService.edit(id, name, visible).then((result) => {
+            this.setState({availableTimeList: this.removeItemFromArray(this.state.availableTimeList, id)});
+            this.setState({availableTimeList: [...this.state.availableTimeList, result]});
+        }, (error) => {
+            console.log(error);
+        })
+    }
+
+    removeItemFromArray = (array: any, id: number) => {
+        return array.filter((element: { id: number; }) => element.id !== id);
+    }
     
-    showForm = (formIndex: number) => {
+    showForm = () => {
         this.setState({showForm: true});
+    }
+
+    showFormInSaveMode = (formIndex: number) => {
+        this.showForm();
         this.setState({formIndex: formIndex});
+    }
+
+    showFormInEditMode = (formIndex: number, idValue: number, nameValue: string, visibleValue: boolean) => {
+        this.setState({idValue: idValue});
+        this.setState({nameValue: nameValue});
+        this.setState({visibleValue: visibleValue});
+
+        this.setState({formIndex: formIndex});
+        this.showForm();
     }
 
     hiddenForm = () => {
         this.setState({showForm: false});
+        this.setState({idValue: 0});
+        this.setState({nameValue: ''});
+        this.setState({visibleValue: false});
+        this.setState({formIndex: 0});
     }
 
     handleFormSave = (event: any, formName: string, formVisible: boolean) => {
@@ -156,7 +265,54 @@ class Main extends React.Component<any, any> {
         this.hiddenForm();
     }
 
-    handleFormEdit = (formName: string, formVisible: boolean) => {
+    handleDeleteItem = (formIndex: number, id: number) => {
+        switch (formIndex) {
+            case 1:
+                this.deleteFlag(id);
+                break;
+            case 2:
+                this.deleteFuel(id);
+                break;
+            case 3: 
+                this.deletePromotion(id);
+                break;
+            case 4:
+                this.deleteService(id);
+                break;
+            case 5:
+                this.deleteAvailableTime(id);
+                break;
+            default:
+                break;;
+        }
+
+        this.hiddenForm();
+    }
+
+    handleFormEdit = (event: any, id: number, formName: string, formVisible: boolean) => {
+        event.preventDefault();
+
+        switch (this.state.formIndex) {
+            case 1:
+                this.editFlag(id, formName, formVisible);
+                break;
+            case 2:
+                this.editFuel(id, formName, formVisible);
+                break;
+            case 3: 
+                this.editPromotion(id, formName, formVisible);
+                break;
+            case 4:
+                this.editService(id, formName, formVisible);
+                break;
+            case 5:
+                this.editAvailableTime(id, formName, formVisible);
+                break;
+            default:
+                break;;
+        }
+
+        this.hiddenForm();
     }
 
     handleFormClose = (event: any) => {
@@ -185,14 +341,15 @@ class Main extends React.Component<any, any> {
     render() {
         return (
             <div>
-                <Form
+                { this.state.showForm && <Form
                     isOpen = {this.state.showForm}
+                    id = {this.state.idValue}
                     name = {this.state.nameValue}
                     visible = {this.state.visibleValue}
                     onSave = {this.handleFormSave}
                     onEdit = {this.handleFormEdit}
                     onClose = {this.handleFormClose}
-                />
+                /> }
             <div className='mt-5 row'>
                  {tables.map((table, i) => (
                     <div className='col-xl-6 col-md-6 col-sm-12 mt-3' key={i}>  
@@ -200,7 +357,7 @@ class Main extends React.Component<any, any> {
                         <div className="card containerCrud">
                             <div className="card-header d-flex cardHeader">
                                 <div>{table.name}</div>     
-                                <button className="iconPlus" onClick={() => this.showForm(table.key)}> <BsPlusCircle color="black"/></button>
+                                <button className="iconPlus" onClick={() => this.showFormInSaveMode(table.key)}> <BsPlusCircle color="black"/></button>
                             </div>
                             <div className="card-body">
                             <table className="table">
@@ -215,6 +372,10 @@ class Main extends React.Component<any, any> {
                                                 return (<tr>
                                                             <td>{data['name']}</td>
                                                             <td>{data['visible'].toString()}</td>
+                                                            <td>
+                                                                <EditIcon color="secondary" onClick={() => this.showFormInEditMode(table.key, data['id'], data['name'], data['visible'])}/>
+                                                                <DeleteIcon sx={{ color: "red" }} onClick={() => this.handleDeleteItem(table.key, data['id'])}/>
+                                                            </td>
                                                         </tr>)
                                             })
                                         }
