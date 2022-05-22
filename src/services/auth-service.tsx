@@ -14,6 +14,7 @@ export default class AuthService {
                 'content-type': 'application/json;charset=UTF-8',
             },
         }).then(response => {
+            if(!response.ok) { return Promise.reject(response.json()); }
             return response.json() as unknown as LoginDTO;
         });
     }

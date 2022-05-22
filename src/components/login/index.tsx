@@ -6,14 +6,15 @@ import { LoginDTO } from "../../model/LoginDTO";
 import AuthService from "../../services/auth-service";
 import { CredentialsType } from "../../model/CredentailsType";
 
-class Login extends React.Component<{}, {username: string, password: string}> {
+class Login extends React.Component<{}, {username: string, password: string, errorMessage: string}> {
 
     constructor(props: any) {
         super(props);
 
         this.state = {
             username: '', 
-            password: ''
+            password: '',
+            errorMessage: ''
         }
 
         this.handleUsername = this.handleUsername.bind(this);
@@ -22,16 +23,16 @@ class Login extends React.Component<{}, {username: string, password: string}> {
     }
 
     handleAuthentication = (event: any) => {
+        event.preventDefault();
+
         let login = new LoginDTO(this.state.username, this.state.password, CredentialsType.ADMINISTRATOR, "");
 
         AuthService.authetication(login).then((result: any) => {
             localStorage.setItem('key', 'Bearer '+result.token)
             window.location.href = "/admin/menu";
         }, (error) => {
-            console.log(error);
+            this.setState({errorMessage: error.message});
         })
-
-        event.preventDefault();
     }
 
     handleUsername = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -55,6 +56,7 @@ class Login extends React.Component<{}, {username: string, password: string}> {
                             <input placeholder="Digite seu CPF/CNPJ..." type="text" onChange={this.handleUsername} required/>
                             <input placeholder="Digite sua senha..." type="password" onChange={this.handlePassword} required/>
                         </form>
+                        {this.state.errorMessage && <p>{this.state.errorMessage}</p>}
                     </div>
                     <p className={loginStyles.recoveryPasswordText}><a>Esqueci minha senha</a></p>
                     <div >

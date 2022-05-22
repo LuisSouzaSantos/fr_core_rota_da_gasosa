@@ -1,6 +1,6 @@
 
 export const GLOBAL_URLS = { 
-    SERVER: "http://rotadagasosaapplication-env.eba-pwgup2ig.sa-east-1.elasticbeanstalk.com"
+    SERVER: "http://localhost:8080"
 }
 
 export default class Service {

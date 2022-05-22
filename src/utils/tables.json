@@ -3,105 +3,110 @@
         "name": "Bandeira",
         "key": 1,
         "fields": 
-            [   
-                {
-                    "key": 1,
-                    "field": "Name"
-                },
-                {
+        [   
+            {
+                "key": 1,
+                "field": "Name"
+            },
+            {
 
-                    "key": 2,
-                    "field": "Visível"
-                },
-                {
+                "key": 2,
+                "field": "Visível"
+            },
+            {
 
-                    "key": 3,
-                    "field": "Ações"
-                }
-            ]
+                "key": 3,
+                "field": "Ações"
+            }
+        ],
+        "datas":[]
     },
     {
         "name": "Combustível",
         "key": 2,
         "fields": 
-            [   
-                {
-                    "key": 1,
-                    "field": "Name"
-                },
-                {
+        [   
+            {
+                "key": 1,
+                "field": "Name"
+            },
+            {
 
-                    "key": 2,
-                    "field": "Visível"
-                },
-                {
+                "key": 2,
+                "field": "Visível"
+            },
+            {
 
-                    "key": 3,
-                    "field": "Ações"
-                }
-            ]
+                "key": 3,
+                "field": "Ações"
+            }
+        ],
+        "datas":[]
     },
     {
         "name": "Promoções",
         "key": 3,
         "fields": 
-            [   
-                {
-                    "key": 1,
-                    "field": "Name"
-                },
-                {
+        [   
+            {
+                "key": 1,
+                "field": "Name"
+            },
+            {
 
-                    "key": 2,
-                    "field": "Visível"
-                },
-                {
+                "key": 2,
+                "field": "Visível"
+            },
+            {
 
-                    "key": 3,
-                    "field": "Ações"
-                }
-            ]
+                "key": 3,
+                "field": "Ações"
+            }
+        ],
+        "datas":[]
     },
     {
         "name": "Serviços",
         "key": 4,
         "fields": 
-            [   
-                {
-                    "key": 1,
-                    "field": "Name"
-                },
-                {
+        [   
+            {
+                "key": 1,
+                "field": "Name"
+            },
+            {
 
-                    "key": 2,
-                    "field": "Visível"
-                },
-                {
+                "key": 2,
+                "field": "Visível"
+            },
+            {
 
-                    "key": 3,
-                    "field": "Ações"
-                }
-            ]
+                "key": 3,
+                "field": "Ações"
+            }
+        ],
+        "datas":[]
     },
     {
         "name": "Tipo de Tempo",
         "key": 5,
         "fields": 
-            [   
-                {
-                    "key": 1,
-                    "field": "Name"
-                },
-                {
+        [   
+            {
+                "key": 1,
+                "field": "Name"
+            },
+            {
 
-                    "key": 2,
-                    "field": "Visível"
-                },
-                {
+                "key": 2,
+                "field": "Visível"
+            },
+            {
 
-                    "key": 3,
-                    "field": "Ações"
-                }
-            ]
+                "key": 3,
+                "field": "Ações"
+            }
+        ],
+        "datas":[]
     }
 ]

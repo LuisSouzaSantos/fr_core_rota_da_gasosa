@@ -1,30 +1,30 @@
-import { FlagDTO } from "../model/FlagDTO";
 import { GLOBAL_URLS } from "./service";
 import Service from "./service";
+import { AvailableTimeDTO } from "../model/AvailableTimeDTO";
 
-const FLAG_URL = GLOBAL_URLS.SERVER + "/flag"
+const AVAILABLE_TIME_URL = GLOBAL_URLS.SERVER + "/availableTime"
 
-export default class FlagService {
+export default class AvailableTimeService {
 
-    static getAll = ():Promise<FlagDTO[]> => {
-        return fetch(FLAG_URL, {
+    static getAll = ():Promise<AvailableTimeDTO[]> => {
+        return fetch(AVAILABLE_TIME_URL, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json;charset=UTF-8',
                 'Authorization': Service.getToken() as string
             },
         }).then(response => {
-            return response.json() as unknown as FlagDTO[];
+            return response.json() as unknown as AvailableTimeDTO[];
         });
     }
 
-    static save = (name: string, visible: boolean):Promise<FlagDTO> => {
+    static save = (name: string, visible: boolean):Promise<AvailableTimeDTO> => {
         let json = {
             name: name,
             visible: visible
         };
 
-        return fetch(FLAG_URL, {
+        return fetch(AVAILABLE_TIME_URL, {
             method: 'POST',
             body: JSON.stringify(json),
             headers: {
@@ -33,7 +33,7 @@ export default class FlagService {
             },
         }).then(response => {
             if(!response.ok) { return Promise.reject(response.json()); }
-            return response.json() as unknown as FlagDTO;
+            return response.json() as unknown as AvailableTimeDTO;
         });
     }
 
