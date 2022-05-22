@@ -3,9 +3,15 @@
 }
 
 .containerCrud{
- 
+ background-color: #F2F2F2;
 }
 
 .cardHeader{
-    
+  background-color: #19628C;
+  color: white;
+}
+
+.gridCruds{
+   padding-left: 50px;
+   padding-right: 50px;
 }

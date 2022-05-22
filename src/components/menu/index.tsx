@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar'
 import { Container } from 'react-bootstrap';
 import logo from '../../assets/images/rota-icone1.png'; 
-import { FiBell } from "react-icons/fi";
+import { FiLogOut } from "react-icons/fi";
 import { IconContext } from "react-icons";
 
 
@@ -20,8 +20,8 @@ export default function Menu() {
        </Navbar.Brand>
      </div>
      <div className="navEnd">
-     <span className="bellIcon " ><FiBell color="black" /></span>
-        <span className="circleUser" >US</span>
+     <span className="bellIcon " ><FiLogOut color="black" /></span>
+     
      </div>
 
    </Navbar>

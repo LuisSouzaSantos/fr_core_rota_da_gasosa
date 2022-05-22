@@ -11,6 +11,7 @@ import ServiceService from "../../services/service-service";
 import Form from "../../components/form/Form";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import Menu from '../../components/menu'
 
 
 class Main extends React.Component<any, any> {
@@ -339,56 +340,55 @@ class Main extends React.Component<any, any> {
     }
     
     render() {
+
         return (
+            <><Menu></Menu>
             <div>
-                { this.state.showForm && <Form
-                    isOpen = {this.state.showForm}
-                    id = {this.state.idValue}
-                    name = {this.state.nameValue}
-                    visible = {this.state.visibleValue}
-                    onSave = {this.handleFormSave}
-                    onEdit = {this.handleFormEdit}
-                    onClose = {this.handleFormClose}
-                /> }
-            <div className='mt-5 row'>
-                 {tables.map((table, i) => (
-                    <div className='col-xl-6 col-md-6 col-sm-12 mt-3' key={i}>  
-                        <div className="card-decker" >
-                        <div className="card containerCrud">
-                            <div className="card-header d-flex cardHeader">
-                                <div>{table.name}</div>     
-                                <button className="iconPlus" onClick={() => this.showFormInSaveMode(table.key)}> <BsPlusCircle color="black"/></button>
-                            </div>
-                            <div className="card-body">
-                            <table className="table">
-                                    <thead>
-                                        <tr>
-                                        {table.fields.map((field, i) => (<th scope="col">{field.field}</th>))}
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {
-                                            this.returnProperlyList(table.key, this.state).map((data: any) => {
-                                                return (<tr>
-                                                            <td>{data['name']}</td>
-                                                            <td>{data['visible'].toString()}</td>
-                                                            <td>
-                                                                <EditIcon color="secondary" onClick={() => this.showFormInEditMode(table.key, data['id'], data['name'], data['visible'])}/>
-                                                                <DeleteIcon sx={{ color: "red" }} onClick={() => this.handleDeleteItem(table.key, data['id'])}/>
-                                                            </td>
-                                                        </tr>)
-                                            })
-                                        }
-                                    </tbody>
-                                </table>
+                {this.state.showForm && <Form
+                    isOpen={this.state.showForm}
+                    id={this.state.idValue}
+                    name={this.state.nameValue}
+                    visible={this.state.visibleValue}
+                    onSave={this.handleFormSave}
+                    onEdit={this.handleFormEdit}
+                    onClose={this.handleFormClose} />}
+                <div className='mt-5 row'>
+                    {tables.map((table, i) => (
+                        <div className='col-xl-6 col-md-6 col-sm-12 mt-5 gridCruds' key={i}>
+                            <div className="card-decker">
+                                <div className="card containerCrud">
+                                    <div className="card-header d-flex cardHeader">
+                                        <div>{table.name}</div>
+                                        <button title="buttonPlus" className="iconPlus" onClick={() => this.showFormInSaveMode(table.key)}> <BsPlusCircle color="black" /></button>
+                                    </div>
+                                    <div className="card-body">
+                                        <table className="table">
+                                            <thead>
+                                                <tr>
+                                                    {table.fields.map((field, i) => (<th scope="col">{field.field}</th>))}
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {this.returnProperlyList(table.key, this.state).map((data: any) => {
+                                                    return (<tr>
+                                                        <td>{data['name']}</td>
+                                                        <td>{data['visible'].toString()}</td>
+                                                        <td>
+                                                            <EditIcon color="secondary" onClick={() => this.showFormInEditMode(table.key, data['id'], data['name'], data['visible'])} />
+                                                            <DeleteIcon sx={{ color: "red" }} onClick={() => this.handleDeleteItem(table.key, data['id'])} />
+                                                        </td>
+                                                    </tr>);
+                                                })}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        </div>              
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
 
-            </div>
+            </div></>
         )
     }
 }
